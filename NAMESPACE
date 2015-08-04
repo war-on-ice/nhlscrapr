@@ -1,0 +1,25 @@
+useDynLib("nhlscrapr")
+importFrom (RCurl, getURL)
+importFrom (rjson, fromJSON)
+importFrom (bitops, bitAnd)
+importFrom (bitops, bitShiftR)
+import (biglm)
+
+export(full.game.database,
+
+       download.single.game,
+       download.games,
+       
+       process.single.game,
+       process.games,
+       compile.all.games,
+
+       pick.section,
+       rushes.rebounds,
+       add.pulls,
+       
+       retrieve.game,
+       
+       player.summary,
+       NP.score
+)

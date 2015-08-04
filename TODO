@@ -1,0 +1,25 @@
+Basic structure:
+
+1) Pre-existing data files.
+	a) Player list. (Compose from all games.)
+	b) Game list. (check)
+
+
+2) New data input.
+	a) Download one game. (check)
+	b) Download all games.(check)
+	c) Compile one game.  (check)
+	d) Compile all games. (check)
+
+3) Data processing.
+	a) Update goal scored column, home/away teams in matrix.
+	
+
+
+
+
+
+To do, future:
+
+1) Missed net location: crossbars and posts.
+
