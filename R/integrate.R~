@@ -551,7 +551,7 @@ construct.rosters.from.list <- function (roster.collection,  #raw list
             if (any(!is.na(m2))) newrecs$player.id[!is.na(m2)] <- roster.master$player.id[m2[!is.na(m2)]]
             if (any(is.na(m2))) newrecs$player.id[is.na(m2)] <- max(roster.master$player.id) + 1:sum(is.na(m2))
             
-            roster.master <- rbind(roster.master, newrecs)
+            roster.master <- rbind(roster.master, newrecs)      
         }
         
         r1.match <- match(this.roster$numfirstlast,
@@ -640,7 +640,7 @@ compile.all.games <- function (rdata.folder="nhlr-data",
                                
                                ...) {
 
-    #library(nhlscrapr); rdata.folder="nhlr-data"; output.folder="source-data"; new.game.table=filter(gamesstart, season >= 20152016); seasons=NULL; verbose=FALSE; override.days.back=NULL; date.check=FALSE; roster.dropin=rosterprefab; reload.games=FALSE
+    #library(nhlscrapr); rdata.folder="nhlr-data"; output.folder="source-data"; new.game.table=filter(gamesstart, season >= 20152016); seasons=NULL; verbose=FALSE; override.days.back=NULL; date.check=FALSE; roster.dropin=rosterprefab; reload.games=TRUE
     
     suppressWarnings(dir.create(output.folder))
 
@@ -787,7 +787,7 @@ compile.all.games <- function (rdata.folder="nhlr-data",
             ## save (roster.master, new.roster, file="myrostercomp.RData")
             
             message(this.season," -- updating rosters on each game file.")
-            roster.master <- construct.rosters.from.list (new.roster, roster.master)
+            roster.master.2 <- construct.rosters.from.list (new.roster, roster.master)
             message(this.season," -- updated rosters on each game file.")
             
             new.pbp.2 <- lapply(new.pbp, function (game.info) {

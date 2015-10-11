@@ -132,7 +132,7 @@ add.fatigue <- function (games) {
     lastgame <- rep(as.Date("2000-01-01"), length(teams))
     last.home <- rep(0, length(teams))
    
-    for (kk in which(nchar(games$hometeam) > 0 & nchar(games$awayteam) > 0 & !is.na(games$date))) {
+    for (kk in which(nchar(games$hometeam) > 0 & nchar(games$awayteam) > 0 & !is.na(games$date) & games$date != "")) {
         if (games$date[kk] == lastgame[which(teams == games$hometeam[kk])] + 1) {
             games$homeafterhome[kk] <- last.home[which(teams == games$hometeam[kk])]
             games$homeafteraway[kk] <- 1-last.home[which(teams == games$hometeam[kk])]

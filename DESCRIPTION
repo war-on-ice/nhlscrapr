@@ -1,8 +1,8 @@
 Package: nhlscrapr
 Type: Package
 Title: Compiling the NHL Real Time Scoring System Database for easy use in R
-Version: 1.10.5
-Date: 2015-05-15
+Version: 1.10.8
+Date: 2015-10-10
 Author: A.C. Thomas, Samuel L. Ventura
 Maintainer: A.C. Thomas <act@acthomas.ca>
 Depends: R (>= 2.15.0), dplyr

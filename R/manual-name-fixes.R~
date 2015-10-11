@@ -426,10 +426,6 @@ fix.names.manually <- function (master.list) {
 
 
 
-    ## 2015-2016
-    master.list$first[which(master.list$last=="MEDVEDEV" & master.list$first=="EVGENY")] <- "YEVGENI"
-
-
 
     
  ##   print(dim(master.list))
