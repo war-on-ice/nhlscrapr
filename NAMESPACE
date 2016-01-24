@@ -1,4 +1,3 @@
-useDynLib("nhlscrapr")
 importFrom (RCurl, getURL)
 importFrom (rjson, fromJSON)
 importFrom (bitops, bitAnd)
