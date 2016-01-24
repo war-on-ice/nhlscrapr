@@ -72,7 +72,9 @@ z.score.poisson.two <- function (count1, count2, time1, time2) {
 absolute.binning <- function (frac) {
 
   #green.
-  my.colors <- c("#DDFFDD", "#88FF88", "#22FF22", "#00DD00", "#00AA00", "#007700", "#003300")
+  my.colors <- c("#DDFFDD", "#88FF88", "#22FF22",
+                 "#00DD00",
+                 "#00AA00", "#007700", "#003300")
   my.colors[ordinal.maker (frac, c(0.03, 0.06, 0.09, 0.12, 0.16, 0.24)) + 1]
   
 #  output <- rep(my.colors[1], length(frac))
@@ -84,7 +86,9 @@ absolute.binning <- function (frac) {
 
 relative.binning <- function (frac) {
 
-  my.colors <- c("#000088","#4444FF","#8888FF","#CCCCFF","#CCDDCC","#FFCCCC","#FF8888","#FF4444","#BB0000")
+  my.colors <- c("#000088","#4444FF","#8888FF","#CCCCFF",
+                 "#CCCCCC",
+                 "#FFCCCC","#FF8888","#FF4444","#BB0000")
 #  my.colors <- c("#000088","#4444FF","#8888FF","#CCCCFF","#FFDDDD","#FF8888","#FF4444","#BB0000")
   my.colors[ordinal.maker (frac, c(1/2, 2/3, 5/6, 11/12, 13/12, 5/4, 3/2, 2)) + 1]
 
@@ -95,12 +99,16 @@ relative.binning <- function (frac) {
 }
 
 z.score.binning <- function (zz) {
-  my.colors <- c("#000088","#4444FF","#8888FF","#CCCCFF","#CCDDCC","#FFCCCC","#FF8888","#FF4444","#BB0000")
+  my.colors <- c("#000088","#4444FF","#8888FF","#CCCCFF",
+                 "#CCCCCC",
+                 "#FFCCCC","#FF8888","#FF4444","#BB0000")
   my.colors[ordinal.maker (zz, c(-6, -4, -2, -0.75, 0.75, 2, 4, 6)) + 1]
 }
 
 diff.binning <- function (zz) {
-  my.colors <- c("#000088","#4444FF","#8888FF","#CCCCFF","#CCDDCC","#FFCCCC","#FF8888","#FF4444","#BB0000")
+  my.colors <- c("#000088","#4444FF","#8888FF","#CCCCFF",
+                 "#CCCCCC",
+                 "#FFCCCC","#FF8888","#FF4444","#BB0000")
   my.colors[ordinal.maker (zz, c(-6, -4, -2, -0.75, 0.75, 2, 4, 6)/6) + 1]
 }
 
