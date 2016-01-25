@@ -52,17 +52,17 @@ full.game.database <- function (extra.seasons=0) {
   games <- rep (1230, length(seasons) + extra.seasons); games[seasons == 20122013] <- 720
 
   #Noted difficulties with existing data in regular season.
-  bad.game.list <- list(c(1:127, 134,135,  #Not in system.   0203
+  bad.game.list <- list(#c(1:127, 134,135,  #Not in system.   0203
                           #419, 483,
-                          582, 598, 872),  #bad images.           
-                        c(10, 251, 453, 456, 482, 802,   1205),     #0304
-                        c(18, 140,   #Visitor GIF makes segfault.   0506
-                          127,
-                          234,
-                          298,  #wrong ES file -- 398 instead of 298.
-                          458,  #bogus ES file.
-                          974),  #0506
-                        c(1024),  #missing line of players for a goal.    #0607
+                        #  582, 598, 872),  #bad images.           
+                        #c(10, 251, 453, 456, 482, 802,   1205),     #0304
+                        #c(18, 140,   #Visitor GIF makes segfault.   0506
+                        #  127,
+                        #  234,
+                        #  298,  #wrong ES file -- 398 instead of 298.
+                        #  458,  #bogus ES file.
+                        #  974),  #0506
+                        #c(1024),  #missing line of players for a goal.    #0607
 
                         c(1178), c(259, 409, 1077),     #0708 0809
                         c(81, 827, 836, 857, 863, 874, 885), c(124, 429),   #0910 1011
@@ -104,10 +104,10 @@ full.game.database <- function (extra.seasons=0) {
 
   #Knock out unplayed playoff games. Here's the data from the last 12 seasons.
   playoff.series.lengths <- 
-    c(5,5,6,7,6,4,7,7, 6,5,6,7, 7,4, 7,
-      5,7,5,7,6,5,7,5, 4,6,6,6, 7,6, 7, #2004
-      5,6,4,6,6,5,7,5, 5,5,6,4, 7,5, 7, #2006
-      5,6,4,5,6,5,7,5, 6,5,6,5, 5,6, 5,
+    c(#5,5,6,7,6,4,7,7, 6,5,6,7, 7,4, 7,
+      #5,7,5,7,6,5,7,5, 4,6,6,6, 7,6, 7, #2004
+      #5,6,4,6,6,5,7,5, 5,5,6,4, 7,5, 7, #2006
+      #5,6,4,5,6,5,7,5, 6,5,6,5, 5,6, 5,
       7,4,7,5,6,7,6,6, 5,5,4,6, 5,6, 6, #2008
       4,7,7,6,6,4,4,6, 7,7,7,6, 4,5, 7,
       7,5,6,6,6,6,6,7, 7,7,5,6, 5,4, 6,
@@ -122,11 +122,11 @@ full.game.database <- function (extra.seasons=0) {
   playoff.status <- c(sapply(playoff.series.lengths, sequence.seven))
   game.roster$status[game.roster$session=="Playoffs"] <- playoff.status
   
-  bad.playoff <- matrix(c("20032004", "30134",
-                          "20052006", "30233"), nrow=2)  #ucase TR TD
-  for (kk in 1:dim(bad.playoff)[2]) 
-    game.roster$status[game.roster$season == bad.playoff[1,kk] &
-                       game.roster$gcode == bad.playoff[2,kk]] <- 0
+  #bad.playoff <- matrix(c("20032004", "30134",
+  #                        "20052006", "30233"), nrow=2)  #ucase TR TD
+  #for (kk in 1:dim(bad.playoff)[2]) 
+  #  game.roster$status[game.roster$season == bad.playoff[1,kk] &
+  #                     game.roster$gcode == bad.playoff[2,kk]] <- 0
 
   return(game.roster)
   
